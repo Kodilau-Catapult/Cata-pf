@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+
+.dropdown-box{
+    position:absolute;
+    display:block;
+    border: 1px solid black;
+    border-radius:5px;
+    list-style-type: none;
+
+}
+.dropdown-section{
+    margin: 0;
+    padding: 0.5rem;
+    font-size: 1rem;
+    width: max-content;
+
+}
+
+header details summary{
+    list-style:none;
+}
+.icon{
+    display:block;
+    block-size: 2rem;
+}
+
+.name-title{
+display: flex;
+justify-content: center;
+font-weight: bolder;
+font-size: 5em;
+}
+
+.name-title:hover{
+    animation-name:spinslap;
+    animation-duration: 2s;
+    animation-timing-function:ease-in;
+    animation-iteration-count:1;
+}
+
+
+@keyframes spinslap
+{
+    0%{
+    transform: rotate(0deg);
+    }
+    10%{
+    transform: rotate(180deg);
+    }
+    20%{
+    transform: rotate(360deg);
+    }
+    30%{
+    transform: rotate(540deg)
+    }
+    100%{
+    transform: rotate(0deg)
+    }
+}
