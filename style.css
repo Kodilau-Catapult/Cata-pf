@@ -4,7 +4,6 @@
     padding: 0;
 }
 
-
 .dropdown-box{
     position:absolute;
     display:block;
@@ -39,26 +38,20 @@ font-size: 5em;
 .name-title:hover{
     animation-name:spinslap;
     animation-duration: 2s;
-    animation-timing-function:ease-in;
-    animation-iteration-count:1;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    animation-iteration-count: 1;
 }
 
 
 @keyframes spinslap
 {
     0%{
-    transform: rotate(0deg);
+    transform:rotate(0deg);
+    transform:scale(0.05);
     }
-    10%{
-    transform: rotate(180deg);
-    }
-    20%{
-    transform: rotate(360deg);
-    }
-    30%{
-    transform: rotate(540deg)
-    }
+
     100%{
-    transform: rotate(0deg)
+    transform: rotate(2000deg);
+    transform:scale(1);
     }
 }
