@@ -17,7 +17,6 @@
     padding: 0.5rem;
     font-size: 1rem;
     width: max-content;
-
 }
 
 header details summary{
@@ -28,6 +27,8 @@ header details summary{
     block-size: 2rem;
 }
 
+
+/* name title goofiness*/
 .name-title{
 display: flex;
 justify-content: center;
@@ -38,20 +39,52 @@ font-size: 5em;
 .name-title:hover{
     animation-name:spinslap;
     animation-duration: 2s;
-    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    animation-timing-function: cubic-bezier(0,-1.19,.24,2.06);
+    /*cubic-bezier(.63,-0.86,.67,2.08)*/
+    
     animation-iteration-count: 1;
 }
-
 
 @keyframes spinslap
 {
     0%{
-    transform:rotate(0deg);
-    transform:scale(0.05);
+    transform:rotate(0deg) scale(0.1);
     }
 
     100%{
-    transform: rotate(2000deg);
-    transform:scale(1);
+    transform: rotate(2880deg) scale(1);
     }
 }
+
+/* P-muse transition*/
+.testbox{
+    background-color: paleturquoise;
+    width: 100px;
+    height: 100px;
+    position:absolute;
+    left: 0px;
+    top: 0px;
+    display:block;
+    animation: none;
+    z-index: -1;
+    /*animation: grow 2s ease-in;*/
+    border: solid 3px whitesmoke;
+    border-radius: 5%;
+        /*default 5%, if circle 50%*/
+}
+.effectbox{
+
+}
+
+@keyframes grow
+{
+0%{
+    transform:scale(1);
+}
+100%{
+    transform:scale(100);
+}
+}
+
+
+
