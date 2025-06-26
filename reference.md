@@ -4,6 +4,9 @@ Html
 <img src="insert image link here">
 
 
+
+
+
 Reacting animations
 
 <!--CSS-->
@@ -14,6 +17,13 @@ Reacting animations
 
 display: flex;
 justify-content:left;
+
+  display: flex;
+    align-items: center;    /* vertical centering */
+    justify-content: center; /* horizontal centering */
+    position: absolute;
+
+/*make border radius a constant unit if you want it to look decent, so use px and NOT em or rem */
 
 list-style-type: ;
 position: relative/absolute;/*relative = position change relative to original location 
@@ -41,7 +51,14 @@ animation: name duration timing-function delay iteration-count direction fill-mo
 
 }
 <style>
+
+
+
+
+
+
+
+
+
 /*How to make dropdown menus*/
-
-
 

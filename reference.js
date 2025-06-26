@@ -16,7 +16,6 @@ button.innerHTML = "button but different";
 image.src = "[insert url here]"
 button
 
-
 //Events List//
 /*
 "click"
@@ -60,5 +59,11 @@ image1.style.display="block";
 .value;
 
 let inputValue = document.querySelector(".inputbox").value
+
+
+//scroll down reaction
+
+
+
 
 
