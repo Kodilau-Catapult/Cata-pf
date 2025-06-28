@@ -258,21 +258,23 @@ spark.classList.add('animate-on-scroll');
 
 
 //thursday
-    //do skills site;
-    //at catapult: finish About me page
-    //start on designing skills site
-    //camile mormal 
+    
+    // X at catapult: finish About me page 
+    
 
 //friday
-    //Mobile Compatible 
+    //Mobile Compatible (never)
+    //style 
+    //start on designing skills site
+    //projects 
+    //do skills site;
 
 //saturday
-    
+
 //script 
     //excuse for no boostrap 
     //unfortunately I could find what I rlly wanted on boostrap so I just made my own.
-
-
+    
 //fireworks 
     //physics engine
     //no
