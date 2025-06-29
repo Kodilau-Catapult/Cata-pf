@@ -189,10 +189,6 @@ navButtons.forEach(function(navButton){
 })
 
 
-function delay (URL) {
-    setTimeout( function() { window.location = URL }, 500 );
-}
-
 let spark = document.createElement("div");
 spark.style.width = "100px";
 spark.style.height = "100px";
@@ -203,6 +199,34 @@ spark.classList.add('animate-on-scroll');
 
 
 
+document.querySelectorAll('.link').forEach(btn => {
+    btn.addEventListener('click', function(event) {
+        event.preventDefault();
+        const targetUrl = this.getAttribute('href');
+        const delayInMilliseconds = 990;
+
+        setTimeout(function() {
+            window.location.href = targetUrl;
+
+        
+        document.getElementById("boxup").style.animationName = "none"
+
+
+        
+        document.getElementById("boxbottom").style.animationName = "none"
+
+
+        }, delayInMilliseconds);
+
+        document.getElementById("boxup").style.display = "block"
+        document.getElementById("boxup").style.animationName = "page-transition-top"
+
+        document.getElementById("boxbottom").style.display = "block"
+        document.getElementById("boxbottom").style.animationName = "page-transition-bottom"
+
+        
+    });
+});
 
 
 
@@ -274,7 +298,7 @@ spark.classList.add('animate-on-scroll');
 //script 
     //excuse for no boostrap 
     //unfortunately I could find what I rlly wanted on boostrap so I just made my own.
-    
+
 //fireworks 
     //physics engine
     //no

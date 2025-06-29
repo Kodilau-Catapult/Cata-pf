@@ -147,6 +147,78 @@ animation-delay: 0.1s;
 
 /*#endregion*/
 
+/* #region link transition*/
+
+@keyframes page-transition-top{
+    
+    0%{
+        display: fixed;
+        transform: translateY(-50vh);
+    }
+    100%{
+        display:fixed;
+        transform: translateY(0);
+    }  
+}
+
+
+@keyframes page-transition-bottom{
+    
+    0%{
+        display: fixed;
+        transform: translateY(50vh)
+    }
+    100%{
+        display:fixed;
+        transform: translateY(0vh)
+    }
+}
+
+.transition-box{
+    position: absolute;
+    display: fixed;
+    background-color: black;
+    width: 100vw;
+    height: 50vh;
+    z-index: 10;
+}
+
+.bottom{
+    display: none;
+    animation-name: page-transition-bottom;
+    animation: 1s ease 1;
+    bottom: 0;
+    transform-origin: 50% 0;
+    background-color: black;
+
+}
+
+.top{
+    display: none;
+    animation-name: page-transition-top;
+    animation: 1s ease 1;
+    top: 0;
+    transform-origin: 50% 100%;
+}  
+
+
+
+
+/* #endregion*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
 .navb::before{
     content:"";
@@ -161,12 +233,23 @@ animation-delay: 0.1s;
     transform: translate(0.25em, 0.25em)
 }
 
-
-
 .navb::before:hover{
     transform:translateY(10px); 
 }
 */
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
