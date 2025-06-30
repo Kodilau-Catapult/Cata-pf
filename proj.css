@@ -1,3 +1,63 @@
+*{
+     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.return{
+    width: 6vh;
+    display: none;
+    position: absolute;
+    transform: translate(-49vw, -4vh) scaleX(-1) rotate(180deg);
+    animation: none;
+}
+
+@keyframes fade
+{
+0%{
+opacity: 0%;
+}
+100%{
+opacity: 100%;
+}
+}
+
+
+.introbox{
+    position: absolute;
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    animation: slide-away 1s ease 1 forwards;
+}
+
+@keyframes slide-away
+{
+0%{
+    transform: translateX(0) ;
+}
+
+100%{
+    transform: translateX(100vw) ;
+    display: none;
+}
+}
+
+@keyframes slide-back{
+    
+    0%{
+        display: block;
+        transform: translateX(100vw) ;
+    }
+    100%{
+         transform: translateX(0vw) ;
+    }
+
+}
+
+
+
+
+
 body{
     height: 100vh;
     width: 100vw;
@@ -6,25 +66,25 @@ body{
     overflow:hidden;
 }
 
-#track > .image{
-width: 90vmin;
-height: 70vmin;
-object-fit: cover;
-object-position: 100% 50%;
-animation: fade-in 1s ease 1;
-
-border-radius: 10px;
+#track .image {
+    width: 90vmin;
+    height: 70vmin;
+    object-fit: cover;
+    object-position: 100% 50%;
+    border-radius: 10px;
+    user-select: none;
+    top: 0%;
 
 }
 
-
 #track{
     display: flex;
-    gap: 4vmin;
+    gap: 5vmin;
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 40%;
     transform: translate(0%, -50%);
+    
 }
 
 @keyframes fade-in
@@ -43,11 +103,11 @@ border-radius: 10px;
 @keyframes rise
 {
     0%{
-        transform: translateY(0%)
+        top: 25%;
     }
 
     100%{
-        transform: translateX(-50%);
+        top: 0;
     }
 
 }
@@ -58,9 +118,89 @@ border-radius: 10px;
     font-weight: bolder;
     font-size: 6em;
     height: 3em;
-    transform: translateX(-20vw);
+
+    transform: translate(-40vw, 10vh);
     /*border: 1px solid black;*/
+}
 
+.title{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: block;
+    width: 10vw;
+    font-weight: bolder;
+    font-size: 2em;
+    height: 3em;
+    position: absolute;
+}
 
-    
+.info{
+    display: block;
+    font-size: 1em;
+    font-weight:normal;
+    width: 30vw;
+    top: 30vh;
+    position: absolute;
+}
+
+.arrow{
+    position: absolute;
+    transform: translate(30vw, 42vh);
+    animation: pointing 2s ease infinite;
+}
+
+@keyframes pointing
+{   
+    0%{
+    transform: translate(30vw, 42vh);
+    }
+    50%{
+    transform: translate(32vw, 42vh);
+    }
+    100%{
+    transform: translate(30vw, 42vh);
+    }
+   
+}
+
+.description{
+    font-size: 2vh;
+    font-weight: bold;
+    position: absolute;
+    transform: translateY(45vh);
+}
+
+.description p{
+    font-weight: lighter;
+    font-size: 1em;
+}
+
+.project{
+    animation: fade-in 1s ease 1;
+}
+
+.project-textbox {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    background: #fff;
+    color: #222;
+    border-radius: 10px;
+    width: 80vmin;
+    font-size: 1.2em;
+    transform: translateY(40px); /* Start below the image */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+#track > a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.description.disabled { 
+    pointer-events: none; 
+    cursor: default; 
 }

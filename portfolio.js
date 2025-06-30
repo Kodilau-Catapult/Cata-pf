@@ -208,13 +208,8 @@ document.querySelectorAll('.link').forEach(btn => {
         setTimeout(function() {
             window.location.href = targetUrl;
 
-        
         document.getElementById("boxup").style.animationName = "none"
-
-
-        
         document.getElementById("boxbottom").style.animationName = "none"
-
 
         }, delayInMilliseconds);
 
