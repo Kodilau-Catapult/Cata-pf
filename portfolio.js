@@ -19,7 +19,7 @@ const blacklist = [".button", ".div"];
 
 const previousPageUrl = document.referrer;
 
-if (previousPageUrl === "") {
+if (previousPageUrl === "https://kodilau-catapult.github.io/Cata-pf/") {
   console.log("User arrived directly to this page.");
     visited = false;
 
@@ -229,16 +229,6 @@ navButtons.forEach(function(navButton){
         }, 100);
     })
 })
-
-
-let spark = document.createElement("div");
-spark.style.width = "100px";
-spark.style.height = "100px";
-spark.style.backgroundColor = "black";
-spark.style.position ="absolute";
-document.body.appendChild(spark);
-spark.classList.add('animate-on-scroll');
-
 
 
 document.querySelectorAll('.link').forEach(btn => {
