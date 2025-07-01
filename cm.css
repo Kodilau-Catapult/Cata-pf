@@ -1,0 +1,103 @@
+*{
+     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body{
+    background-color: #a4eda7;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    top: 2vh;
+
+    font-weight: bolder;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 6em;
+    
+    animation-name: slidein;
+    animation-duration: 1.5s;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+}
+
+.info{
+    display: block;
+    position: absolute;
+    inset: 20% auto auto 8%;
+
+}
+
+.info > img{
+    height: 30vh;
+    border-radius: 30px;
+
+}
+
+.media-button{
+margin-left: 4vw;
+height: 12vh;
+border-radius: 20px;
+transform: translateY(0);    
+transition: transform 1s ease 1;
+
+}
+
+.media-button:hover{
+    transform: translateY(-10px); 
+    transition: transform 1s ease 1;
+}
+
+
+.media-track{
+    
+    position: absolute;
+    inset: auto auto 10% 4%
+
+}
+
+.input-type {
+    font-weight: bold;
+    font-size: 3em;
+    margin-bottom: 0.2em; /* Reduce space below the title */
+}
+
+input {
+    border: 2px black solid;
+    border-radius: 20px;
+    background-color: white;
+    font-size: 1.5em;
+    margin-top: 0.2em; /* Reduce space above the input */
+}
+textarea{
+    border: 2px black solid;
+    border-radius: 20px;
+    background-color: white;
+    font-size: 1.5em;
+    margin-top: 0.2em; 
+}
+
+.mail{
+margin: 0;
+padding: 0;
+
+
+position: absolute;
+inset: 20% auto auto 60%;
+}
+
+.name-input{
+    content: Insert Name Here;
+
+    
+}
+
+.email-input{
+    content: Insert Email Here;
+}
+
+.message-input{
+     content: Type Message Here;
+    height: 5em;
+    width: 20vw;
+}

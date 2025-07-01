@@ -48,8 +48,8 @@ track.addEventListener('wheel', function(e) {
 
     prevPercentage = percentage; // Keep scroll and drag in sync
     update(percentage);
-}, { passive: false });
 
+}, { passive: false });
 
 // function to update track and images
 
@@ -67,7 +67,6 @@ function getPercentage() {
 }
 
 let turnArrow = document.querySelector(".return");
-
 setTimeout(() => {
 
     turnArrow.style.display = "block";
@@ -80,7 +79,7 @@ setTimeout(() => {
         document.querySelector(".introbox").style.animation = "slide-back 1s ease 1";
 
         setTimeout(() => {
-            window.location.href = "Porfolio.html";
+            window.location.href = "index.html";
         }, 950);
     })
 }, 1000);

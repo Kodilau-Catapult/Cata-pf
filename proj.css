@@ -135,29 +135,28 @@ body{
 
 .info{
     display: block;
-    font-size: 1em;
+    font-size: 6vw;
     font-weight:normal;
-    width: 30vw;
+    width: 35vw;
     top: 30vh;
     position: absolute;
 }
 
 .arrow{
-    position: absolute;
-    transform: translate(30vw, 42vh);
     animation: pointing 2s ease infinite;
+    transform: translate(30vw, 44vh);
 }
 
 @keyframes pointing
 {   
     0%{
-    transform: translate(30vw, 42vh);
+    transform: translate(30vw, 44vh);
     }
     50%{
-    transform: translate(32vw, 42vh);
+    transform: translate(32vw, 44vh);
     }
     100%{
-    transform: translate(30vw, 42vh);
+    transform: translate(30vw, 44vh);
     }
    
 }

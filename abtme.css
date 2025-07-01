@@ -6,6 +6,12 @@
 }
 
 
+html, body {
+      margin: 0;
+      height: 100%;
+
+    }
+
 .title {
     position: absolute;
     left: 50%;
@@ -23,16 +29,134 @@
     animation-iteration-count: 1;
 }
 
-.portrait{
-    position:absolute; 
-    max-height: 45vh;
-    left: 2vw;
-    top: 20vh;
-    
-    border-radius: 15%;
-    border: 8px solid white;
+.am-card>h1{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bolder;
+    font-size: 3.5vw;
+    text-align: center;
 }
 
+.am-card>ul>li{
+    
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.5vw;
+    font-weight: 500;
+    transform: translate(3vw, -4vh);
+    
+}
+.am-card>ul{
+    position: absolute;
+    top: 35%;
+    left: 35%;
+    line-height: 3em;
+}
+
+.c2 >img{
+    height: 15vw;
+    transform: translate(2vw, 9vh);
+    position: absolute;
+    border: 3px solid goldenrod;
+    border-radius: 50px;
+}
+
+.c2 > ul> li
+{
+    transform: translate(10vw, -4vh);
+}
+
+.portrait{
+    width: 12vw;
+    transform: translate(3vw, 0);
+    position: absolute;
+    border: 3px solid goldenrod;
+    border-radius: 100px;
+
+}
+
+.am-card{
+    position: absolute;
+    border: 1px solid black;
+    width: 50vw;
+    height: 40vh;
+    border-radius: 25px;
+    background-color: white;
+    box-shadow: 7px 7px black;
+    
+}
+
+.c1 {
+    position: absolute;
+    inset: 20vh auto auto 5vw;
+}
+.c2 {
+    position: absolute;
+    inset: 53vh 5vw auto auto;
+}
+
+/* Only animate on first load when .intro is present */
+.c1.intro {
+    animation: slide-right 1s ease 1;
+}
+.c2.intro {
+    animation: slide-left 1s ease 1;
+}
+
+
+.c1:hover{
+    animation: raise 0.25s ease 1 forwards;
+}
+
+.c2:hover{
+    animation: raise 0.25s ease 1 forwards;
+}
+
+@keyframes raise{
+    0%{
+        z-index: 0;
+        box-shadow: 7px 7px;
+        transform: translate(0px, 0px);
+
+    }
+    100%{
+        z-index: 5;
+        box-shadow: 9px 9px;
+        transform: translate(-3px,-3px);
+    }
+}
+
+@keyframes slide-right
+{
+    0%{
+        opacity: 0%;
+        transform: translateX(-20vw);
+    }
+    100%{
+        opacity: 100%;
+        transform: translateX(0vw);
+        animation: none;
+
+    }
+}
+
+@keyframes slide-left
+{
+    0%{
+        opacity: 0%;
+        transform: translateX(20vw);
+    }
+    100%{
+        opacity: 100%;
+        transform: translateX(0vw);
+        animation: none;
+
+    }
+}
+
+
+
+
+
+/*#region card-stack*/
 .tvthing{
     display: flex;
     justify-content: space-between;
@@ -41,39 +165,52 @@
 
 
 .bar1{
-    inset: 25vh auto auto 10vw;
+inset: 120vh auto auto 60vw;
 }
 
 .bar2{
-    inset: 25vh auto auto 80vw;
+inset: 120vh auto auto 80vw;
+}
+
+.section-name{
+   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+   font-weight: bolder;
+   font-size: 5vh;
+   text-align: center;
+   transform: translate(-1em);
+   text-decoration: underline white;
+}
+
+
+.selection-box{
+    position: absolute;
+    display: flex;
+    flex-direction: row; /* Make bars side by side */
+    justify-content: center;
+    align-items: center;
+    left: 65vw; /* Shift to the right (adjust as needed) */
+    top: 100vh;  /* Align vertically with selection-bar */
+    z-index: 2;
+    gap: 5vw; /* Add space between bar1 and bar2 */
 }
 
 .selection-bar{
-    position: absolute;
-    /*
-    background-image: linear-gradient(90deg,rgb(58, 94, 94, 0.4), rgb(58, 94, 94, 0.8));
-    background-image: linear-gradient(90deg, rgba(58, 94, 94, 0.4), rgba(58, 94, 94, 0.8));
-    */
-
+    /* Remove position and top */
+    /* position: absolute; */
+    /* top: 25vh; */
     background-color: transparent;
     width: 10vw;
     height: 70vh;
-    
-    top: 25vh;
-
-    border: 2px black;
-
     border-radius: 40px;
     display: flex;
-    
     align-items: center;
     justify-content: space-evenly;
     flex-direction: column;
-
 }
+
 .selection-button{
-    margin-top: 1.5em;
-    margin-bottom: 2em;
+    margin-top: 1em;
+    margin-bottom: 1.5em;
     padding: 0.5em;
 
     border-radius: 50%;
@@ -84,8 +221,8 @@
     font-weight: bold;
     font-size: 3em;
 
-    height: 4vh;
-    width: 4vh;
+    height: 7vh;
+    width: 7vh;
     text-align: center;
     opacity: 100% !important;
 
@@ -93,12 +230,12 @@
     align-items: center;
     justify-content: center;
 }
+
 .selection-button:hover{
     background-color: #f0f0f0;
     transform: translateY(-2px);
     box-shadow: 5px 5px black;
     cursor: pointer;
-
 }
 
 .emoji{
@@ -109,14 +246,24 @@
     padding: 0;
 }
 
+.content-title{
+    font-size: 4em;
+    transform: translateY(-.59em);
+    text-align: center;
+}
+
+
+.content-title{
+    
+}
+
 .contentbox{
     display: flex;
     /* vertical centering */
     justify-content: center; /* horizontal centering */
     position: absolute;
 
-    inset: 20vh auto auto 20vw;
-
+    inset: 100vh auto auto 0vw;
 
     /*background-image: linear-gradient(90deg, #3b95c2, #59c3f0);*/
 
@@ -129,11 +276,8 @@
     height: 35em;
 
     text-align: center;
-    
-
 }
-.textbox{
-    
+.textbox {
     transform: translateY(3em);
     display: none;
     border-radius: 25px;
@@ -144,8 +288,8 @@
     position: absolute;
     animation: none;
     box-shadow: 9px 9px black;
-    /*flip-card 1.5s ease 1*/
     overflow: auto;
+
 }
 
 .text{
@@ -156,10 +300,9 @@
     position: absolute
 }
 
-.default-me{
-position: absolute;
-display: block;
-
+.default-me {
+    display: block;
+    z-index: 5;
 }
 
 .games-me{
@@ -167,64 +310,61 @@ display: none;
 position: absolute;
 }
 
-@keyframes bounce
-{
-
-    0%{
-    }
-
-}
-
 @keyframes flip-card{
     0%{
     z-index: 5;
     transform: translate(0 0);
     box-shadow: 0 0 black;
-    position: fixed;
+    
     }
     30%{
     transform: translate(-40px, -7px);
     box-shadow: 0 0 black;
-    position: fixed;
+    
     }
     100%{
-    
+
     transform: translate(0, 700px);
     display: none;
     box-shadow: 0 0 black;
-    position: fixed;
+  
     }
 
 }
+/* #endregion */
+/* #region opening transition css*/
 
-/* #region opening card css*/
-
-.transition-box{
-    position: absolute;
-    display: fixed;
+.transition-box {
+    position: fixed;
     background-color: black;
     width: 100vw;
     height: 50vh;
     z-index: 10;
 }
 
-.bottom{
-    
-    animation-name: page-transition-bottom;
-    animation: 1s ease 1;
-    bottom: 0;
-    transform-origin: 50% 0;
-    background-color: black;
-
-}
-
-.top{
-    
+.top {
+    position: fixed;
     animation-name: page-transition-top;
     animation: 1s ease 1;
     top: 0;
+    left: 0;
+    width: 100vw;
+    height: 50vh;
     transform-origin: 50% 100%;
-}  
+    background-color: black;
+}
+
+.bottom {
+    position: fixed;
+    animation-name: page-transition-bottom;
+    animation: 1s ease 1;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 50vh;
+    transform-origin: 50% 0;
+    background-color: black;
+}
 
 
 @keyframes page-transition-top{
@@ -254,18 +394,45 @@ position: absolute;
 
 /*#endregion */
 
-html, body {
-      margin: 0;
-      height: 100%;
-    }
-
     .triangle-gradient {
       width: 100%;
       height: 100vh;
       background:
-        linear-gradient(to bottom right, transparent 50%, #6cd0e3 50%), /* light blue triangle */
-        linear-gradient(to bottom left, transparent 65%, #66c6f0 65%),  /* darker blue triangle */
+        linear-gradient(to bottom right, transparent 60%, #66c6f0 50%),
+        linear-gradient(to top left, transparent 52%, #6cd0e3 50%),
         #b4f3f4; /* base background color */
       background-repeat: no-repeat;
       background-size: 100% 100%;
+      z-index: -100;
     }
+
+ .triangle-gradient-2 {
+      width: 100%;
+      height: 100vh;
+      background:
+        linear-gradient(to top right, transparent 60%, #66c6f0 60%), 
+        linear-gradient(to bottom left, transparent 52%, #6cd0e3 50%),  
+        #b4f3f4; /* base background color */
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      z-index: -100;
+    }
+
+.return{
+    width: 6vh;
+    display: block;
+    position: absolute;
+    transform: translate(1vw, -98vh) scaleX(-1) rotate(180deg);
+    animation: none;
+    z-index: 10;
+}
+
+@keyframes fade
+{
+0%{
+opacity: 0%;
+}
+100%{
+opacity: 100%;
+}
+}
