@@ -19,7 +19,7 @@ const blacklist = [".button", ".div"];
 
 const previousPageUrl = document.referrer;
 
-if (previousPageUrl === "") {
+if (previousPageUrl === ""||previousPageUrl ==="https://www.google.com/") {
   console.log("User arrived directly to this page.");
   console.log(previousPageUrl);
     visited = false;
