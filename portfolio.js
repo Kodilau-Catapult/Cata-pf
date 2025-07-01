@@ -19,8 +19,9 @@ const blacklist = [".button", ".div"];
 
 const previousPageUrl = document.referrer;
 
-if (previousPageUrl === "https://kodilau-catapult.github.io/Cata-pf/") {
+if (previousPageUrl === "") {
   console.log("User arrived directly to this page.");
+  console.log(previousPageUrl);
     visited = false;
 
 } else {
