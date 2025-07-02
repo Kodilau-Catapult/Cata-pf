@@ -234,8 +234,19 @@ setTimeout(function(){
 
             console.log(countChineseCharacters(titles[i]))
             
-            coverbox.style.width = (countChineseCharacters(titles[i]))*mult +"em";
+
+            if(lang = false){
+                coverbox.style.width = (countChineseCharacters(titles[i]))*mult +"em";
+            }
+            else{
+                coverbox.style.width = titles[i].length*mult +"em";
+            }
             
+           
+
+
+
+
             coverbox.style.animation = "titlewipe 1s cubic-bezier(.84,-0.01,.22,.99)";
             
             coverbox.style.backgroundColor = colorLocal; 
