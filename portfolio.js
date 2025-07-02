@@ -1,3 +1,4 @@
+
 function countChineseCharacters(text) {
   // Regex to match CJK Unified Ideographs (common Chinese characters)
   // and CJK Compatibility Ideographs.
@@ -33,15 +34,17 @@ console.log(filename);
 
 
 if (filename.includes("ch-index.html")===true){
-    titles = ["彈射實習生   ", "數學愛好者", "新興企業家", "政府愛好者"];
-    console.log(titles)
-    console.log("chinese")
+titles = ["彈射實習生   ", "數學愛好者", "新興企業家", "政府愛好者",];
+console.log(titles)
+console.log("chinese")
     lang =false;
 }
 else{
-    titles = ["Catapult Intern   ", "Math Enjoyer", "Rising Entrepeneur", "Government Enthusiast"];
-    console.log("english");
-    lang = true;
+titles = ["Catapult Intern   ", "Math Enjoyer", "Rising Entrepeneur", "Government Enthusiast",];
+
+console.log("english");
+    
+
 }
 
 const blacklist = [".button", ".div"];
@@ -132,8 +135,6 @@ else{
     console.log("colorwipe active.")
 }
 })
-
-
 
 
 //#endregion
@@ -234,6 +235,7 @@ setTimeout(function(){
             console.log(countChineseCharacters(titles[i]))
             
             coverbox.style.width = (countChineseCharacters(titles[i]))*mult +"em";
+            
             coverbox.style.animation = "titlewipe 1s cubic-bezier(.84,-0.01,.22,.99)";
             
             coverbox.style.backgroundColor = colorLocal; 

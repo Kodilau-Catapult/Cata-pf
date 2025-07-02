@@ -127,12 +127,23 @@ setTimeout(() => {
             document.getElementById("boxup").style.animationName = "none"
             document.getElementById("boxbottom").style.animationName = "none"
 
-            if (document.includes("abtme-ch.js")===true)
+
+            function getFileName() {
+            let path = window.location.pathname;
+            let filename = path.substring(path.lastIndexOf('/') + 1);
+            return filename;
+            }
+
+            console.log(getFileName());
+
+            if (getFileName().includes("abtme-ch.js") === true)
             {
+            console.log("success")
             window.location.href = "index-ch.html";
             }
             else
             {
+            console.log("fail")
             window.location.href = "index.html";
             }
             

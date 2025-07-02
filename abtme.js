@@ -141,11 +141,9 @@ setTimeout(() => {
     return filename;
     }
     console.log(getFileName());
-    
+
     //Chinese transition/normal too
     
-
-
 
     })
 }, 1000);

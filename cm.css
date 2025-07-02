@@ -61,18 +61,26 @@ box-shadow: 4px 4px black;
     100%{
 
     }
-
 }
+
+
+.return{
+    width: 6vh;
+    display: block;
+    position: absolute;
+    transform: scaleX(-1) rotate(180deg);
+    animation: none;
+    z-index: 10;
+}
+
 
 
 .media-track{
     display: flex;
     position: absolute;
-    inset: auto auto 8% 4%;
+    inset: auto auto 20% 4%;
     flex-direction: column;
     justify-content: space-evenly;
-    
-
 }
 
 .input-type {
@@ -130,9 +138,20 @@ inset: 20% auto auto 60%;
 
 
 
+.headshot{
+    border: 3px goldenrod solid;
+}
 
+@keyframes slide-in
 
-
+{
+    0%{
+        transform: translateX(-10vw);
+    }
+    100%{
+        transform: translateX()
+    }
+}
 
 .transition-box {
     position: fixed;

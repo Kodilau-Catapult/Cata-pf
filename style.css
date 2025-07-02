@@ -6,7 +6,7 @@
 
 }
 
-html, body {margin: 0; height: 100%; overflow: hidden}
+html, body {margin: 0; height: 100%; }
 
 
 /* #region dropdown stuff (Testing, not actually used)*/
@@ -85,6 +85,7 @@ font-size: 7em;
     font-weight: bolder;
     z-index: 1;
     animation:subslide 2s ease 1;
+
 }
 
 .coverbox{
@@ -96,7 +97,10 @@ font-size: 7em;
     width:10em;
     height:1.8rem;
     transform: translate(58vw, 2px);
+    animation:none;
 }
+
+
 /* #endregion */
 /* #region navbar buttons*/
 
@@ -154,9 +158,6 @@ font-size: 7em;
     inset: 0% 0% auto auto;
     transform: translateY(-3vh)
 }
-
-
-
 
 
 .navb:hover{
@@ -421,6 +422,7 @@ animation-delay:0.1s;
     opacity: 0%;
     transform: translate(58vw, -9em);
     }
+
     100%{
     opacity: 100%;
     transform: translateY(58vw, 0);    
