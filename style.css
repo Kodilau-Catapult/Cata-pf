@@ -8,6 +8,7 @@
 
 html, body {margin: 0; height: 100%; overflow: hidden}
 
+
 /* #region dropdown stuff (Testing, not actually used)*/
 
     .dropdown-box{
@@ -28,7 +29,6 @@ html, body {margin: 0; height: 100%; overflow: hidden}
     header details summary{
         list-style:none;
     }
-
 
 h1{
 position:relative;
@@ -62,6 +62,7 @@ animation: appear 3s ease;
 }
 /* #endregion*/
 /* #region name title goofiness*/
+
 .name-title{
 margin-top: 10vh;
 display: flex;
@@ -125,8 +126,41 @@ font-size: 7em;
   animation: navmove 1s ease;
 }
 
+
+.translation-button{
+    position: relative;
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    background-color: white;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius:0%;
+    border-top-left-radius: 0%;
+    border-top-right-radius: 0%;
+
+    width: 2em;
+    height: 2em;
+    display: flex;
+    box-shadow: 5px 5px black;
+  align-items: center;
+  justify-content: center;
+  color: black; /* Ensures the text is visible */
+  animation: navmove 1s ease;
+}
+
+
+.translation{
+    position: absolute;
+    inset: 0% 0% auto auto;
+    transform: translateY(-3vh)
+}
+
+
+
+
+
 .navb:hover{
-    box-shadow: 4px 4px;
+    box-shadow: 3px 3px;
     transform: translate(4px);
     cursor: pointer;
 }

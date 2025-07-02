@@ -1,5 +1,15 @@
+function countChineseCharacters(text) {
+  // Regex to match CJK Unified Ideographs (common Chinese characters)
+  // and CJK Compatibility Ideographs.
+  // The 'u' flag enables Unicode support for the regex.
+  const chineseRegex = /[\u4E00-\u9FFF\u3400-\u4DBF\uF900-\uFAFF]/gu;
+  const matches = text.match(chineseRegex);
+  return matches ? matches.length : 0;
+}
+
 let clickX;
 let clickY;
+let titles = [];
 let testbox = document.querySelector(".testbox");
 let coverbox = document.querySelector(".coverbox");
 let activeState = false;
@@ -10,9 +20,30 @@ let subtitle = document.querySelector(".subtitle");
 let colorGlobal = "paleturquoise";
 let navButtons = document.querySelectorAll(".navb");
 let visited = false;
+let lang = true;
 
 const color = ["#8FEFCF","paleturquoise","#FFDF64"];
-const titles = ["Catapult Intern   ", "Math Enjoyer", "Rising Entrepeneur", "Government Enthusiast",]
+
+let url = window.location.pathname;
+let filename = url.substring(url.lastIndexOf('/') + 1);
+console.log(filename);
+
+
+
+
+
+if (filename.includes("ch-index.html")===true){
+    titles = ["彈射實習生   ", "數學愛好者", "新興企業家", "政府愛好者"];
+    console.log(titles)
+    console.log("chinese")
+    lang =false;
+}
+else{
+    titles = ["Catapult Intern   ", "Math Enjoyer", "Rising Entrepeneur", "Government Enthusiast"];
+    console.log("english");
+    lang = true;
+}
+
 const blacklist = [".button", ".div"];
 
 //Check if from original URL
@@ -48,11 +79,9 @@ if (previousPageUrl === ""||previousPageUrl ==="https://www.google.com/") {
 
 }
 
-
-
 // #region color change on click
 document.addEventListener("click", function(event){
-
+console.log(document);
 if (activeState === false)
 {
 
@@ -140,6 +169,7 @@ activeState = false;
 }, 500)
 //#endregion 
 // #region create on scroll thru
+
 {
 const animationElements = document.querySelectorAll(".animate-on-scroll")
 const observer = new IntersectionObserver((entries) => {
@@ -149,8 +179,8 @@ const observer = new IntersectionObserver((entries) => {
     entry.target.classList.add('animate');
     }
     })
-}
-)
+});
+
 for (i = 0; i < animationElements.length; i++)
 {
     const el = animationElements[i];
@@ -179,17 +209,31 @@ setTimeout(function(){
         }
 
         console.log("color Picked:" + colorLocal);
-        
+       
+
         if (i > (titles.length-1))
         {
             i = 0
-        }   
-        
+        }  
+        let mult = 0.90
+        if (lang === false)
+        {
+            mult = 1.50
+            console.log("mult 2")
+        }
+        else{
+            lang =0.90
+            console.log("mult 1")
+        }
+
         if (titleState === false)
         {
             coverbox.style.display = "block";
             titleState = true;
-            coverbox.style.width = (titles[i].length)*0.90 +"em";
+
+            console.log(countChineseCharacters(titles[i]))
+            
+            coverbox.style.width = (countChineseCharacters(titles[i]))*mult +"em";
             coverbox.style.animation = "titlewipe 1s cubic-bezier(.84,-0.01,.22,.99)";
             
             coverbox.style.backgroundColor = colorLocal; 
@@ -237,9 +281,19 @@ document.querySelectorAll('.link').forEach(btn => {
         event.preventDefault();
         const targetUrl = this.getAttribute('href');
         const delayInMilliseconds = 990;
+        console.log(targetUrl);
 
         setTimeout(function() {
+
+            
+            if (`${document}`.includes("ch-index.js") === true)
+            {
+            window.location.href = "ch-"+targetUrl;
+            }
+            else
+            {
             window.location.href = targetUrl;
+            }
 
             document.getElementById("boxup").style.animationName = "none"
             document.getElementById("boxbottom").style.animationName = "none"

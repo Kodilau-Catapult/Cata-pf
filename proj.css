@@ -20,6 +20,14 @@ opacity: 100%;
 }
 }
 
+.desc{
+    color:AFEEEE;
+}
+
+.desc:hover{
+    color: black;
+}
+
 
 .introbox{
     position: absolute;

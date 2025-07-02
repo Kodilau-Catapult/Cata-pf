@@ -51,9 +51,10 @@ buttons.forEach(button => {
         }
 
         // Find the target box
+
         let className = button.classList[1].replace('-button', '-me');
         let selectedBox = document.querySelector(`.${className}`);
-
+        
         if (!selectedBox || selectedBox === existingBox) {
             console.log("same page or box not found");
             return;
@@ -62,6 +63,7 @@ buttons.forEach(button => {
         active = true;
 
         // Reset all button styles
+
         document.querySelectorAll(".selection-button").forEach(btn => {
             btn.style.boxShadow = "5px 5px black";
             btn.style.transform = "translateY(-1px)";
@@ -76,9 +78,9 @@ buttons.forEach(button => {
         // Prepare new box (incoming)
         selectedBox.style.display = "block";
         selectedBox.style.zIndex = "1";
-        selectedBox.style.animation = "fade-in 1.2s ease 1";
         
         // Animate old box (outgoing)
+        console.log(existingBox)
         existingBox.style.animation = "flip-card 1.2s ease 1";
         existingBox.style.zIndex = "5";
 
@@ -96,7 +98,7 @@ buttons.forEach(button => {
             selectedBox.style.animation = "none";
             existingBox = selectedBox;
             active = false;
-        }, 1200);
+        }, 1000);
     });
 });
 
@@ -123,9 +125,28 @@ setTimeout(() => {
             document.getElementById("boxup").style.animationName = "none"
             document.getElementById("boxbottom").style.animationName = "none"
 
-
+            if (getFileName() === ("ch-abtme.html"))
+            {
+            window.location.href = "ch-index.html";
+            }
+            else
+            {
             window.location.href = "index.html";
+            }
         }, 1200);
+
+    function getFileName() {
+    let path = window.location.pathname;
+    let filename = path.substring(path.lastIndexOf('/') + 1);
+    return filename;
+    }
+    console.log(getFileName());
+    
+    //Chinese transition/normal too
+    
+
+
+
     })
 }, 1000);
 //#endregion
@@ -167,4 +188,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 });
 
-
+function loadVideo(img) {
+  const wrapper = img.parentNode;
+  wrapper.innerHTML = `<iframe width="360" height="215" src="https://www.youtube.com/embed/le1gN2tK3iQ?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+}
